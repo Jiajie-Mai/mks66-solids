@@ -1,0 +1,24 @@
+push
+move
+300 300 0
+scale
+3 2 1
+sphere
+0 0 0 70
+pop
+push
+move
+250 200 0
+box
+0 0 0 50 50 0
+pop
+push
+sphere
+0 0 0 125
+rotate
+x 50
+torus
+0 0 0 100 150
+display
+save
+thing.png

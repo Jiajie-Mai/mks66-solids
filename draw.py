@@ -7,23 +7,33 @@ def scanline_convert(polygons, i, screen, zbuffer ):
 
     color = [random.randint(0,255),random.randint(0,255),random.randint(0,255)]
 
-    p = [ (polygons[i][0], polygons[i][1], polygons[i][2]),
-               (polygons[i+1][0], polygons[i+1][1], polygons[i+1][2]),
-               (polygons[i+2][0], polygons[i+2][1], polygons[i+2][2]) ]
-    if polygons[i][1]>polygons[i+2][1]:
-        p = [ (polygons[i+2][0], polygons[i+2][1], polygons[i+2][2]),
-               (polygons[i+1][0], polygons[i+1][1], polygons[i+1][2]),
-               (polygons[i][0], polygons[i][1], polygons[i][2]) ]
+    thing1 = polygons[i][0]
+    thing2 = polygons[i + 1][0]
+    thing3 = polygons[i + 2][0]
+    thing4 = polygons[i][1]
+    thing5 = polygons[i + 1][1]
+    thing6 = polygons[i + 2][1]
+    thing7 = polygons[i][2]
+    thing8 = polygons[i + 1][2]
+    thing9 = polygons[i + 2][2]
 
-    elif polygons[i][1]>polygons[i+1][1]:
-        p = [ (polygons[i+1][0], polygons[i+1][1], polygons[i+1][2]),
-               (polygons[i][0], polygons[i][1], polygons[i][2]),
-               (polygons[i+2][0], polygons[i+2][1], polygons[i+2][2]) ]
+    p = [ ( thing1, thing4, thing7 ),
+               ( thing2, thing5, thing8 ),
+               ( thing3, thing6, thing9 ) ]
+    if thing4>thing6:
+        p = [ ( thing3, thing6, thing9 ),
+               ( thing2, thing5, thing8 ),
+               ( thing1, thing4, thing7 ) ]
 
-    elif polygons[i+1][1]>polygons[i+2][1]:
-        p = [ (polygons[i][0], polygons[i][1], polygons[i][2]),
-               (polygons[i+2][0], polygons[i+2][1], polygons[i+2][2]),
-               (polygons[i+1][0], polygons[i+1][1], polygons[i+1][2]) ]
+    elif thing4>thing5:
+        p = [ ( thing2, thing5, thing8 ),
+               ( thing1, thing4, thing7 ),
+               ( thing3, thing6, thing9 ) ]
+
+    elif thing5>thing6:
+        p = [ ( thing1, thing4, thing7 ),
+               ( thing3, thing6, thing9 ),
+               ( thing2, thing5, thing8 ) ]
 
     '''xb = p[0][0]
     xt = p[0][0]
