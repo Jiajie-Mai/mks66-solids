@@ -7,33 +7,33 @@ def scanline_convert(polygons, i, screen, zbuffer ):
 
     color = [random.randint(0,255),random.randint(0,255),random.randint(0,255)]
 
-    thing1 = polygons[i][0]
-    thing2 = polygons[i + 1][0]
-    thing3 = polygons[i + 2][0]
-    thing4 = polygons[i][1]
-    thing5 = polygons[i + 1][1]
-    thing6 = polygons[i + 2][1]
-    thing7 = polygons[i][2]
-    thing8 = polygons[i + 1][2]
-    thing9 = polygons[i + 2][2]
+    point1 = polygons[i][0]
+    point2 = polygons[i + 1][0]
+    point3 = polygons[i + 2][0]
+    point4 = polygons[i][1]
+    point5 = polygons[i + 1][1]
+    point6 = polygons[i + 2][1]
+    point7 = polygons[i][2]
+    point8 = polygons[i + 1][2]
+    point9 = polygons[i + 2][2]
 
-    p = [ ( thing1, thing4, thing7 ),
-               ( thing2, thing5, thing8 ),
-               ( thing3, thing6, thing9 ) ]
-    if thing4>thing6:
-        p = [ ( thing3, thing6, thing9 ),
-               ( thing2, thing5, thing8 ),
-               ( thing1, thing4, thing7 ) ]
+    p = [ ( point1, point4, point7 ),
+               ( point2, point5, point8 ),
+               ( point3, point6, point9 ) ]
+    if point4>point6:
+        p = [ ( point3, point6, point9 ),
+               ( point2, point5, point8 ),
+               ( point1, point4, point7 ) ]
 
-    elif thing4>thing5:
-        p = [ ( thing2, thing5, thing8 ),
-               ( thing1, thing4, thing7 ),
-               ( thing3, thing6, thing9 ) ]
+    elif point4>point5:
+        p = [ ( point2, point5, point8 ),
+               ( point1, point4, point7 ),
+               ( point3, point6, point9 ) ]
 
-    elif thing5>thing6:
-        p = [ ( thing1, thing4, thing7 ),
-               ( thing3, thing6, thing9 ),
-               ( thing2, thing5, thing8 ) ]
+    elif point5>point6:
+        p = [ ( point1, point4, point7 ),
+               ( point3, point6, point9 ),
+               ( point2, point5, point8 ) ]
 
     '''xb = p[0][0]
     xt = p[0][0]
